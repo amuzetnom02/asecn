@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  # Container 1: Core identity and configuration
+  asecn-core:
+    image: golang:1.20-alpine
+    volumes:
+      - ./asecn-core:/app
+    command: sh -c "echo 'Core identity container ready' && tail -f /dev/null"
+    networks:
+      - asecn-network
+
+  # Container 2: Memory management
+  memory-core:
+    image: python:3.11-slim
+    volumes:
+      - ./memory-core:/app
+    command: sh -c "echo 'Memory core container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+    networks:
+      - asecn-network
+
+  # Container 3: Input/output and sensory parsing
+  perception-layer:
+    image: python:3.11-slim
+    volumes:
+      - ./perception-layer:/app
+    command: sh -c "echo 'Perception layer container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - memory-core
+    networks:
+      - asecn-network
+
+  # Container 4: Decision making
+  will:
+    image: golang:1.20-alpine
+    volumes:
+      - ./will:/app
+    command: sh -c "echo 'Decision making container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - memory-core
+      - perception-layer
+    networks:
+      - asecn-network
+
+  # Container 5: World state and external data
+  reality:
+    image: node:18-alpine
+    volumes:
+      - ./reality:/app
+    command: sh -c "echo 'Reality container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+    networks:
+      - asecn-network
+
+  # Container 6: Execution logic and orchestration
+  control:
+    image: python:3.11-slim
+    volumes:
+      - ./control:/app
+    command: sh -c "echo 'Control container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - will
+    networks:
+      - asecn-network
+
+  # Container 7: Blockchain layer and persistent storage
+  storage:
+    image: node:18-alpine
+    volumes:
+      - ./storage:/app
+    command: sh -c "echo 'Storage container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - memory-core
+    networks:
+      - asecn-network
+
+  # Container 8: Task scheduling and autonomous jobs
+  execution:
+    image: python:3.11-slim
+    volumes:
+      - ./execution:/app
+    command: sh -c "echo 'Execution container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - control
+    networks:
+      - asecn-network
+
+  # Container 9: Treasury and fund management
+  vault:
+    image: node:18-alpine
+    volumes:
+      - ./vault:/app
+    command: sh -c "echo 'Vault container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - storage
+    networks:
+      - asecn-network
+
+  # Container 10: Evolution and governance
+  evolver:
+    image: python:3.11-slim
+    volumes:
+      - ./evolver:/app
+    command: sh -c "echo 'Evolver container ready' && tail -f /dev/null"
+    depends_on:
+      - asecn-core
+      - memory-core
+      - will
+    networks:
+      - asecn-network
+
+networks:
+  asecn-network:
+    driver: bridge

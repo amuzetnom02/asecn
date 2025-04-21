@@ -1,0 +1,1 @@
+// Placeholder for schema-validator.js

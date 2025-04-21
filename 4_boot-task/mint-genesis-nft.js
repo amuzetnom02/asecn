@@ -1,0 +1,1 @@
+// Placeholder for mint-genesis-nft.js
