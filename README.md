@@ -93,8 +93,8 @@ graph TD
 ```
 - **Treasury**: Analyzes financial data, allocates resources, and ensures the system operates within its constraints.
 
-> E
-Key improvements:
+
+# Key improvements:
 
 *   **Sequence Diagram:** Added a system sequence diagram to visualize the interactions between modules.
 *   **Error Handling and Validation:** Included error handling and data validation steps in the Perception and Action Layer diagrams.
@@ -103,8 +103,6 @@ Key improvements:
 *   **Conciseness:** Maintained conciseness while adding more detail to the diagrams.  Removed the redundant text descriptions of each module as the diagrams are now self-explanatory.
 
 
-These enhanced diagrams provide a more comprehensive and clearer representation of the system's logic flow and interactions. They are more informative and easier to understand, contributing to better documentation and communication.
-volve these mocks into real on-chain actions later (e.g. via Alchemy or ethers.js).
 ---
 ## Table of Contents
 - [Installation](#installation)
