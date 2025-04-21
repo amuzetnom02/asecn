@@ -1,1 +1,1 @@
-// Placeholder for index.js
+// Central performer interface for executing actions

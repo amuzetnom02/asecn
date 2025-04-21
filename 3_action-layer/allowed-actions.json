@@ -1,1 +1,3 @@
-// Placeholder for allowed-actions.json
+{
+  "actions": ["mint-nft", "deploy-contract", "send-funds"]
+}

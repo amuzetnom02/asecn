@@ -1,1 +1,4 @@
-// Placeholder for trigger-config.json
+{
+  "checkInterval": 5000,
+  "activeTriggers": ["eth-price-check", "custom-signal", "time-signal"]
+}

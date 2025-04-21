@@ -1,1 +1,1 @@
-// Placeholder for send-funds.js
+// Logic to disburse treasury funds

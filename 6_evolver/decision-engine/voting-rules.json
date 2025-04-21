@@ -1,1 +1,6 @@
-// Placeholder for voting-rules.json
+{
+    "voting-period": "72 hours",
+    "majority-threshold": 0.6,
+    "min-votes": 5
+  }
+  

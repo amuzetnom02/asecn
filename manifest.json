@@ -1,1 +1,23 @@
-// Placeholder for manifest.json
+// manifest.json
+{
+    "name": "ASECN",
+    "version": "0.1.0",
+    "description": "Autonomous Self-Evolving Crypto Node",
+    "author": "Artifact Virtual",
+    "license": "MIT",
+    "entry": "core",
+    "layers": [
+      "1_memory-core",
+      "2_perception-layer",
+      "3_action-layer",
+      "4_boot-task",
+      "5_vault",
+      "6_evolver",
+      "7_interfaces",
+      "8_utilities",
+      "9_tests",
+      "10_docs"
+    ],
+    "env": "config.env"
+  }
+  

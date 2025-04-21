@@ -1,1 +1,1 @@
-// Placeholder for mint-nft.js
+// Logic to mint an NFT

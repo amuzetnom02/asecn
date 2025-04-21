@@ -1,11 +1,19 @@
-🧠 1_memory-core/ — The memory of ASECN
-🔍 Purpose
-This is where ASECN stores and retrieves internal memory: past actions, decisions, states, observations, and logs.
+# 🧠 Memory Core Map
 
-/1_memory-core/
-├── memory-state.json         # Stores current memory snapshot
-├── memory-log.json           # Full chronological memory entries
-├── write.js                  # Function to add new memory entries
-├── recall.js                 # Function to retrieve past memories
-├── purge.js                  # Logic to clean up or archive old memory
-└── index.js                  # Master interface (import this to access memory functions)
+## write.js
+Writes entries to `memory-state.json` with a timestamp.
+
+## read.js
+Reads and returns entire memory contents.
+
+## recall.js
+Filters memory entries based on keyword or string match.
+
+## purge.js
+Wipes all stored memory clean.
+
+## memory-state.json
+Stores memory as a JSON array of entries.
+
+## memory-log.json (optional)
+Logs each memory event in detail (used for audits or time travel).

@@ -1,1 +1,1 @@
-// Placeholder for deploy-contract.js
+// Logic to deploy a new contract/module

@@ -1,1 +1,12 @@
-// Placeholder for proposal-log.json
+[
+    {
+      "proposal": {
+        "title": "Add passive income feature",
+        "description": "Implement a passive income strategy to enhance treasury yield generation.",
+        "submittedBy": "Creator"
+      },
+      "status": "pending",
+      "timestamp": "2025-04-20T10:00:00Z"
+    }
+  ]
+  

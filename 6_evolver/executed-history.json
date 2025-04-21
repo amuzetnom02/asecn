@@ -1,1 +1,9 @@
-// Placeholder for executed-history.json
+[
+    {
+      "action": "proposal-submitted",
+      "title": "Add passive income feature",
+      "status": "pending",
+      "timestamp": "2025-04-20T10:00:00Z"
+    }
+  ]
+  

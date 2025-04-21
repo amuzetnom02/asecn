@@ -1,13 +1,9 @@
-const fs = require("fs");
-const path = require("path");
+// /1_memory-core/purge.js
+const fs = require('fs');
+const path = require('path');
+const memoryPath = path.join(__dirname, 'memory-state.json');
 
-const logPath = path.join(__dirname, "memory-log.json");
-
-function purgeOldMemory(cutoffDateISO) {
-  const log = JSON.parse(fs.readFileSync(logPath, "utf8"));
-  const cutoff = new Date(cutoffDateISO);
-  const filtered = log.filter(entry => new Date(entry.timestamp) >= cutoff);
-  fs.writeFileSync(logPath, JSON.stringify(filtered, null, 2));
-}
-
-module.exports = purgeOldMemory;
+module.exports = function purgeMemory() {
+  fs.writeFileSync(memoryPath, '[]');
+  console.log('🧼 Memory wiped clean.');
+};

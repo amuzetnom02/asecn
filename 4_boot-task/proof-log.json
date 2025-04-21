@@ -1,1 +1,5 @@
-// Placeholder for proof-log.json
+{
+    "boot_completed": false,
+    "timestamp": null
+  }
+  
