@@ -8,8 +8,8 @@ import numpy as np
 from dataclasses import dataclass
 from concurrent.futures import ThreadPoolExecutor
 
-from autogen_config import create_agents, initialize_workflow, start_group_chat
-from interpreter_config import ASECNInterpreter
+from control.ai_integrations.autogen_config import create_agents, initialize_workflow, start_group_chat
+from control.ai_integrations.interpreter_config import ASECNInterpreter
 
 @dataclass
 class QuantumState:

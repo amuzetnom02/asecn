@@ -1,6 +1,10 @@
 import interpreter
 from pathlib import Path
 import os
+import sys
+
+# Add the project root to the Python path
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 class ASECNInterpreter:
     def __init__(self):

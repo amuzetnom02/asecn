@@ -2,6 +2,10 @@ from typing import Dict, List
 import autogen
 from pathlib import Path
 import os
+import sys
+
+# Add the project root to the Python path
+sys.path.append(str(Path(__file__).parent.parent.parent))
 
 # Base configuration for AutoGen agents
 BASE_CONFIG = {
