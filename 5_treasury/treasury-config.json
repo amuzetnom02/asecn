@@ -1,0 +1,11 @@
+{
+  "reservePercent": 50,
+  "incomeStrategies": {
+    "donations": 0.2,
+    "passiveYield": 0.3,
+    "investments": 0.5
+  },
+  "vaultAddress": "0xYourVaultAddressHere",
+  "currency": "ETH",
+  "auditInterval": 86400
+}

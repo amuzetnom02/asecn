@@ -1,5 +1,4 @@
 {
-    "ETH": 1000,
-    "S3": 0
-  }
-  
+  "currentBalance": 0,
+  "lastUpdated": "2025-04-21T00:00:00Z"
+}
