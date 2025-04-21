@@ -3,6 +3,7 @@
 ## Comprehensive System Overview
 
 ### System Model
+
 ASECN is a modular, intelligent system designed to autonomously evolve by perceiving its environment, taking actions, and learning from experiences. The system is structured into interconnected modules, each responsible for a specific cognitive or operational function. Below is the high-level system model:
 
 ```mermaid
@@ -24,6 +25,7 @@ graph TD
 - **Treasury**: Manages resources and financial operations.
 
 ### System Architecture
+
 The architecture of ASECN is designed to ensure scalability, modularity, and real-time processing. Each module operates independently but communicates through well-defined interfaces.
 
 ```mermaid
@@ -42,10 +44,10 @@ graph LR
 - **Treasury**: Allocates resources and performs financial analysis.
 - **Evolver**: Updates models and adapts the system to new challenges.
 
-
 ### Logic Flow
 
 #### Perception Layer
+
 ```mermaid
 graph TD
     A[Input Data] --> B[Data Preprocessing]
@@ -53,9 +55,11 @@ graph TD
     C --> D[Pattern Recognition]
     D --> E[Output to Memory Core]
 ```
+
 - **Perception Layer**: Processes raw input data, extracts meaningful features, and identifies patterns to pass to the Memory Core.
 
 #### Memory Core
+
 ```mermaid
 graph TD
     A[Input from Perception Layer] --> B[Short-Term Memory]
@@ -63,9 +67,11 @@ graph TD
     C --> D[Knowledge Retrieval]
     D --> E[Output to Action Layer]
 ```
+
 - **Memory Core**: Stores data in short-term and long-term memory, retrieves knowledge, and provides it to the Action Layer.
 
 #### Action Layer
+
 ```mermaid
 graph TD
     A[Input from Memory Core] --> B[Decision Making]
@@ -73,28 +79,35 @@ graph TD
     C --> D[Action Execution]
     D --> E[Feedback to Memory Core]
 ```
+
 - **Action Layer**: Makes decisions, plans actions, executes them, and provides feedback to the Memory Core for continuous improvement.
 
 #### Evolver
+
 ```mermaid
 graph TD
     A[Input from Memory Core] --> B[Learning Algorithm]
     B --> C[Model Update]
     C --> D[Output to Memory Core]
 ```
+
 - **Evolver**: Uses learning algorithms to update models and improve the system's performance over time.
 
 #### Treasury
+
 ```mermaid
 graph TD
     A[Input from Action Layer] --> B[Financial Analysis]
     B --> C[Resource Allocation]
     C --> D[Output to Action Layer]
 ```
+
 - **Treasury**: Analyzes financial data, allocates resources, and ensures the system operates within its constraints.
 
 ---
+
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
@@ -107,18 +120,25 @@ graph TD
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/amuzetnom02/asecn.git
    ```
+
 2. Navigate to the project directory:
+
    ```bash
    cd asec
    ```
+
 3. Install dependencies:
+
    ```bash
    npm install
    ```
+
 4. Run the project:
+
    ```bash
    npm start
    ```
@@ -128,9 +148,11 @@ graph TD
 ## Usage
 
 To interact with ASECN, use the following command:
+
 ```bash
 node index.js
 ```
+
 This will start the system and execute the main logic.
 
 ---
@@ -159,6 +181,7 @@ This will start the system and execute the main logic.
 ## Contributing
 
 We welcome contributions! Please follow these steps:
+
 1. Fork the repository.
 2. Create a new branch.
 3. Make your changes.
