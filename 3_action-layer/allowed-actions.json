@@ -1,3 +1,16 @@
 {
-  "actions": ["mint-nft", "deploy-contract", "send-funds"]
+  "actions": ["mint-nft", "send-funds", "deploy-contract"],
+  "mint-nft": {
+    "enabled": true,
+    "params": ["to", "metadata"]
+  },
+  "send-funds": {
+    "enabled": true,
+    "params": ["to", "amount"]
+  },
+  "deploy-contract": {
+    "enabled": true,
+    "params": ["name", "args"]
+  }
 }
+

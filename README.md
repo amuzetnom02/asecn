@@ -93,6 +93,7 @@ graph TD
 ```
 - **Treasury**: Analyzes financial data, allocates resources, and ensures the system operates within its constraints.
 
+> Evolve these mocks into real on-chain actions later (e.g. via Alchemy or ethers.js).
 ---
 ## Table of Contents
 - [Installation](#installation)

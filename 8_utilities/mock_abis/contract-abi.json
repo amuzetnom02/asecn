@@ -1,0 +1,13 @@
+[
+    {
+      "type": "function",
+      "name": "greet",
+      "inputs": [],
+      "outputs": [{ "type": "string", "name": "greeting" }]
+    },
+    {
+      "type": "constructor",
+      "inputs": [{ "type": "string", "name": "message" }]
+    }
+  ]
+  

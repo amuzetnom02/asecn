@@ -1,120 +1,117 @@
 version: '3.8'
 
 services:
-  # Container 1: Core identity and configuration
-  asecn-core:
-    image: golang:1.20-alpine
-    volumes:
-      - ./asecn-core:/app
-    command: sh -c "echo 'Core identity container ready' && tail -f /dev/null"
-    networks:
-      - asecn-network
-
-  # Container 2: Memory management
+  # Core Module 1: Memory Core
   memory-core:
-    image: python:3.11-slim
+    image: node:18-alpine
     volumes:
-      - ./memory-core:/app
-    command: sh -c "echo 'Memory core container ready' && tail -f /dev/null"
-    depends_on:
-      - asecn-core
+      - ./1_memory-core:/app/1_memory-core
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Memory Core module ready' && tail -f /dev/null"
     networks:
       - asecn-network
 
-  # Container 3: Input/output and sensory parsing
+  # Core Module 2: Perception Layer
   perception-layer:
-    image: python:3.11-slim
+    image: node:18-alpine
     volumes:
-      - ./perception-layer:/app
-    command: sh -c "echo 'Perception layer container ready' && tail -f /dev/null"
+      - ./2_perception-layer:/app/2_perception-layer
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Perception Layer module ready' && tail -f /dev/null"
     depends_on:
-      - asecn-core
       - memory-core
     networks:
       - asecn-network
 
-  # Container 4: Decision making
-  will:
-    image: golang:1.20-alpine
+  # Core Module 3: Action Layer
+  action-layer:
+    image: node:18-alpine
     volumes:
-      - ./will:/app
-    command: sh -c "echo 'Decision making container ready' && tail -f /dev/null"
+      - ./3_action-layer:/app/3_action-layer
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Action Layer module ready' && tail -f /dev/null"
     depends_on:
-      - asecn-core
       - memory-core
       - perception-layer
     networks:
       - asecn-network
 
-  # Container 5: World state and external data
-  reality:
+  # Core Module 4: Boot Task
+  boot-task:
     image: node:18-alpine
     volumes:
-      - ./reality:/app
-    command: sh -c "echo 'Reality container ready' && tail -f /dev/null"
+      - ./4_boot-task:/app/4_boot-task
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Boot Task module ready' && tail -f /dev/null"
     depends_on:
-      - asecn-core
-    networks:
-      - asecn-network
-
-  # Container 6: Execution logic and orchestration
-  control:
-    image: python:3.11-slim
-    volumes:
-      - ./control:/app
-    command: sh -c "echo 'Control container ready' && tail -f /dev/null"
-    depends_on:
-      - asecn-core
-      - will
-    networks:
-      - asecn-network
-
-  # Container 7: Blockchain layer and persistent storage
-  storage:
-    image: node:18-alpine
-    volumes:
-      - ./storage:/app
-    command: sh -c "echo 'Storage container ready' && tail -f /dev/null"
-    depends_on:
-      - asecn-core
       - memory-core
+      - action-layer
     networks:
       - asecn-network
 
-  # Container 8: Task scheduling and autonomous jobs
-  execution:
-    image: python:3.11-slim
-    volumes:
-      - ./execution:/app
-    command: sh -c "echo 'Execution container ready' && tail -f /dev/null"
-    depends_on:
-      - asecn-core
-      - control
-    networks:
-      - asecn-network
-
-  # Container 9: Treasury and fund management
-  vault:
+  # Core Module 5: Treasury
+  treasury:
     image: node:18-alpine
     volumes:
-      - ./vault:/app
-    command: sh -c "echo 'Vault container ready' && tail -f /dev/null"
+      - ./5_treasury:/app/5_treasury
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Treasury module ready' && tail -f /dev/null"
     depends_on:
-      - asecn-core
-      - storage
+      - action-layer
     networks:
       - asecn-network
 
-  # Container 10: Evolution and governance
+  # Core Module 6: Evolver
   evolver:
-    image: python:3.11-slim
+    image: node:18-alpine
     volumes:
-      - ./evolver:/app
-    command: sh -c "echo 'Evolver container ready' && tail -f /dev/null"
+      - ./6_evolver:/app/6_evolver
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Evolver module ready' && tail -f /dev/null"
     depends_on:
-      - asecn-core
       - memory-core
-      - will
+    networks:
+      - asecn-network
+
+  # Support Module 1: Interfaces
+  interfaces:
+    image: node:18-alpine
+    volumes:
+      - ./7_interfaces:/app/7_interfaces
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    ports:
+      - "3000:3000"  # Exposing port for web interface
+    command: sh -c "echo 'Interfaces module ready' && tail -f /dev/null"
+    depends_on:
+      - memory-core
+      - action-layer
+    networks:
+      - asecn-network
+
+  # Support Module 2: Utilities & Tests
+  utilities:
+    image: node:18-alpine
+    volumes:
+      - ./8_utilities:/app/8_utilities
+      - ./9_tests:/app/9_tests
+      - ./node_modules:/app/node_modules
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: sh -c "echo 'Utilities module ready' && tail -f /dev/null"
     networks:
       - asecn-network
 

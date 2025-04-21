@@ -1,150 +1,149 @@
-🧠 ASECN Build Plan (Linear Flow)
-Each phase includes dev goals, logic, and minimal tests.
+# ASECN Development Roadmap
 
-🟢 Phase 0: System Primitives
-“Lay the core before the lore.”
+A structured plan for building ASECN in a linear flow. Each phase includes development goals, logic, and minimal tests.
 
-✅ Goals
-Set base configs and constants
+---
 
-Establish logger and schema validation
+## 🟢 Phase 0: System Primitives
+**"Lay the core before the lore."**
 
-Prepare .env, manifest.json, and README.md
+### Goals
+- Set up base configurations and constants.
+- Establish logging and schema validation.
+- Prepare `.env`, `manifest.json`, and `README.md`.
 
-📁 Files
-config.env
+### Key Files
+- `config.env`
+- `/utilities/logger.js`, `schema-validator.js`, `time.js`
+- `/manifest.json`, `/README.md`
 
-/utilities/logger.js, schema-validator.js, time.js
+---
 
-/manifest.json, /README.md
+## ⚙️ Phase 1: Memory-Core
+**"ASECN must remember to evolve."**
 
-⚙️ Phase 1: Memory-Core
-“ASECN must remember to evolve.”
+### Goals
+- Implement core JSON memory with read/write/recall functionality.
+- Support memory types: observation, trigger, action, upgrade.
+- Enable timestamped logging.
 
-✅ Goals
-Core JSON memory with read/write/recall
+### Key Files
+- `memory-state.json`, `memory-log.json`
+- `read.js`, `write.js`, `recall.js`, `purge.js`
+- `index.js`
 
-Support memory types: observation, trigger, action, upgrade
+---
 
-Timestamped logging
+## ⏱️ Phase 2: Perception Layer
+**"ASECN sees first. Then reacts."**
 
-📁 Files
-memory-state.json, memory-log.json
+### Goals
+- Develop oracles to pull signals (e.g., time, price, custom).
+- Configure triggers for polling and logging.
+- Run perception on intervals (starting with `time-feed.js`).
+- Pipe results to memory.
 
-read.js, write.js, recall.js, purge.js
+### Key Files
+- `time-feed.js`, `trigger-config.json`, `trigger-log.json`
+- `index.js`
 
-index.js
+---
 
-⏱️ Phase 2: Perception Layer
-“ASECN sees first. Then reacts.”
+## 🚨 Phase 3: Action Layer
+**"From signal to motion."**
 
-✅ Goals
-oracles/ pull signals: time, price, custom
+### Goals
+- Define allowable actions (`allowed-actions.json`).
+- Implement mock actions: `mint-nft.js`, `send-funds.js`.
+- Log every action and its result.
+- Trigger actions based on perception inputs.
 
-triggers/ log + config for polling
+### Key Files
+- `actuators/*.js`
+- `action-log.json`, `index.js`
 
-Run perception on interval (start with time-feed.js)
+---
 
-Pipe results to memory
+## 🌱 Phase 4: Boot Task
+**"Genesis ritual. ASECN awakens."**
 
-📁 Files
-time-feed.js, trigger-config.json, trigger-log.json
+### Goals
+- Execute a one-time boot sequence.
+- Log system birth, mint a genesis NFT, and write the first memory.
+- Verify via `proof-log.json`.
 
-index.js
+### Key Files
+- `birth-sequence.json`, `mint-genesis-nft.js`, `write-birth-memory.js`
 
-🚨 Phase 3: Action Layer
-“From signal to motion.”
+---
 
-✅ Goals
-Define allowable actions (allowed-actions.json)
+## 💰 Phase 5: Treasury / Vault
+**"Survival and self-funding."**
 
-Implement mint-nft.js, send-funds.js (mock)
+### Goals
+- Read/write treasury state.
+- Implement mock income and expense logic.
+- Create threshold-based triggers (e.g., auto-send if over cap).
 
-Log every action, result
+### Key Files
+- `vault.js`, `vault-config.json`, `balance-state.json`, `tx-history.json`
+- `income-strategies/*.js`
 
-Trigger from perception inputs
+---
 
-📁 Files
-actuators/*.js
+## 🧬 Phase 6: Evolver
+**"Thoughts to future selves."**
 
-action-log.json, index.js
+### Goals
+- Propose upgrades via `proposal-engine.js`.
+- Record proposals and executed upgrades.
+- Implement a simple voting system (mock DAO).
+- Integrate off-chain AI suggestion inputs.
 
-🌱 Phase 4: Boot Task
-“Genesis ritual. ASECN awakens.”
+### Key Files
+- `proposal-engine.js`
+- `decision-engine/`
+- `executed-history.json`
 
-✅ Goals
-One-time boot sequence
+---
 
-Log birth, mint genesis NFT, write first memory
+## 🌐 Phase 7: Interfaces
+**"Speak to the world."**
 
-Check via proof-log.json
+### Goals
+- Develop a basic API for memory fetch and action triggers.
+- Create a simple web dashboard for status monitoring.
+- Implement a webhook listener for external inputs.
 
-📁 Files
-birth-sequence.json, mint-genesis-nft.js, write-birth-memory.js
+### Key Files
+- `get-memory.js`, `trigger-action.js`
+- `index.html`, `webhook-listener.js`
 
-💰 Phase 5: Treasury / Vault
-“Survival and self-funding.”
+---
 
-✅ Goals
-Read/write treasury state
+## 🧪 Phase 8: Tests
+**"Every layer verified."**
 
-Mock income + expense logic
+### Goals
+- Test the memory-core, perception-layer, action-layer, and boot-sequence.
+- Use Jest or Node's native test runner.
 
-Threshold-based triggers (e.g. auto-send if over cap)
+### Key Files
+- `*.test.js` files for each major system.
 
-📁 Files
-vault.js, vault-config.json, balance-state.json, tx-history.json
+---
 
-income-strategies/*.js
+## 🗂️ Summary Roadmap
 
-🧬 Phase 6: Evolver
-“Thoughts to future selves.”
+| Phase | Name               | Goal                          | Status         |
+|-------|--------------------|-------------------------------|----------------|
+| 0     | System Primitives  | Configs, logging, schema      | 🔜 Next        |
+| 1     | Memory-Core        | Internal memory system        | ✅ Done (mostly)|
+| 2     | Perception Layer   | Oracles + Triggers            | ⏳ Coming       |
+| 3     | Action Layer       | Core output logic             | ⏳ Coming       |
+| 4     | Boot Task          | First-time run rituals        | ⏳ Coming       |
+| 5     | Treasury           | Vault, income/outflow         | ⏳ Coming       |
+| 6     | Evolver            | Proposal + upgrade engine     | ⏳ Coming       |
+| 7     | Interfaces         | Web + API + webhook           | ⏳ Coming       |
+| 8     | Tests              | System-level testing          | ⏳ Coming       |
 
-✅ Goals
-Propose upgrades via proposal-engine.js
-
-Record proposals and executed ones
-
-Simple voting system (mock DAO)
-
-Offchain AI suggestion input
-
-📁 Files
-proposal-engine.js, decision-engine/, executed-history.json
-
-🌐 Phase 7: Interfaces
-“Speak to the world.”
-
-✅ Goals
-Basic API: memory fetch, trigger action
-
-Web dashboard status (simple HTML + JS)
-
-Webhook listener for external inputs
-
-📁 Files
-get-memory.js, trigger-action.js, index.html, webhook-listener.js
-
-🧪 Phase 8: Tests
-“Every layer verified.”
-
-✅ Goals
-Test memory-core, perception-layer, action-layer, boot-sequence
-
-Use Jest or native Node test runner
-
-📁 Files
-*.test.js files for each major system
-
-🗂️ Summary Roadmap
-
-Phase	Name	Goal	Status
-0	System Primitives	Configs, logging, schema	🔜 Next
-1	Memory-Core	Internal memory system	✅ Done (mostly)
-2	Perception Layer	Oracles + Triggers	⏳ Coming
-3	Action Layer	Core output logic	⏳ Coming
-4	Boot Task	First-time run rituals	⏳ Coming
-5	Treasury	Vault, income/outflow	⏳ Coming
-6	Evolver	Proposal + upgrade engine	⏳ Coming
-7	Interfaces	Web + API + webhook	⏳ Coming
-8	Tests	System-level testing	⏳ Coming
