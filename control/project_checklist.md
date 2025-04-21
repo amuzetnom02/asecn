@@ -20,6 +20,8 @@
 - [ ] Memory encryption (sensitive data)
 - [ ] Memory migration capabilities
 - [ ] Memory core unit tests
+- [ ] **[Vision Alignment]** Merkle tree implementation for immutability
+- [ ] **[Vision Alignment]** IPFS/Arweave integration for persistent storage
 
 ## Module 2: Perception Layer
 
@@ -31,6 +33,8 @@
 - [ ] Oracle error handling
 - [ ] Trigger scheduling system
 - [ ] Perception layer unit tests
+- [ ] **[Vision Alignment]** News API integration for broader awareness
+- [ ] **[Vision Alignment]** Cross-chain data perception capabilities
 
 ## Module 3: Action Layer
 
@@ -45,6 +49,8 @@
 - [ ] Gas optimization strategies
 - [ ] Transaction batching
 - [ ] Action layer unit tests
+- [ ] **[Vision Alignment]** Cross-chain interaction capabilities
+- [ ] **[Vision Alignment]** Sub-agent deployment framework
 
 ## Module 4: Boot Task
 
@@ -54,6 +60,8 @@
 - [ ] Boot sequence verification
 - [ ] Recovery mechanisms
 - [ ] Boot task unit tests
+- [ ] **[Vision Alignment]** Soul NFT with immutable identity metadata
+- [ ] **[Vision Alignment]** Birth metadata storage on IPFS/Arweave
 
 ## Module 5: Treasury
 
@@ -64,6 +72,8 @@
 - [ ] Income strategy implementation
 - [ ] Treasury security measures
 - [ ] Treasury unit tests
+- [ ] **[Vision Alignment]** Self-sustaining funding mechanisms
+- [ ] **[Vision Alignment]** Cross-chain asset management
 
 ## Module 6: Evolver
 
@@ -73,6 +83,9 @@
 - [ ] Upgrade execution framework
 - [ ] Governance token integration
 - [ ] Evolver unit tests
+- [ ] **[Vision Alignment]** Self-modification capabilities
+- [ ] **[Vision Alignment]** A/B simulation testing framework
+- [ ] **[Vision Alignment]** Autonomous upgrade path selection
 
 ## Module 7: Interfaces
 
@@ -81,6 +94,8 @@
 - [ ] Webhook listener completed
 - [ ] API authentication/security
 - [ ] Interface unit tests
+- [ ] **[Vision Alignment]** Human engagement interface
+- [ ] **[Vision Alignment]** Visual/cultural generation interface
 
 ## Module 8: Utilities
 
@@ -91,15 +106,15 @@
 - [ ] Enhanced error handling
 - [ ] Rate limiting for external services
 - [ ] Utilities unit tests
+- [ ] **[Vision Alignment]** Cross-chain utility functions
 
-## Module 9: AI Integration
+## Module 9: Advanced Capabilities
 
-- [ ] RAG (Retrieval-Augmented Generation) setup
-- [ ] LLM integration for decision making
-- [ ] Memory pattern recognition
-- [ ] Predictive analytics for treasury management
-- [ ] Self-improvement learning capabilities
-- [ ] AI monitoring system
+- [ ] **[Vision Alignment]** Human hiring mechanism
+- [ ] **[Vision Alignment]** Predictive modeling and anticipation
+- [ ] **[Vision Alignment]** Culture and NFT generation
+- [ ] **[Vision Alignment]** Sub-network spawning and management
+- [ ] **[Vision Alignment]** Death and reincarnation protocols
 
 ## Quality & Security Improvements
 
