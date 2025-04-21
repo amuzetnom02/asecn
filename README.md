@@ -42,8 +42,8 @@ graph LR
 - **Treasury**: Allocates resources and performs financial analysis.
 - **Evolver**: Updates models and adapts the system to new challenges.
 
-### Logic Flow Diagrams
-Each module has a specific logic flow, as detailed below:
+
+### Logic Flow
 
 #### Perception Layer
 ```mermaid
